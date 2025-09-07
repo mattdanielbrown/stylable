@@ -11,9 +11,10 @@
     "start": "webpack-dev-server --hot --inline",
     "test": "npm run test:node",
     "test:node": "ts-mocha \"./tests/**/*.spec.ts\"",
-    "prepublish": "npm run build",
+    "prepublish": "yarn run snyk-protect && npm run build",
     "lint": "tslint --project ./tsconfig.json",
-    "deploy:site": "cd site && bundle install && bundle exec jekyll build -s ./ -d ./_site && cd .. && gh-pages -d ./site/_site"
+    "deploy:site": "cd site && bundle install && bundle exec jekyll build -s ./ -d ./_site && cd .. && gh-pages -d ./site/_site",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "css-selector-tokenizer": "^0.7.0",
@@ -27,7 +28,8 @@
     "postcss-nested": "^3.0.0",
     "postcss-safe-parser": "^3.0.1",
     "postcss-selector-matches": "^3.0.1",
-    "postcss-value-parser": "^3.3.0"
+    "postcss-value-parser": "^3.3.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@types/chai": "^4.1.2",
@@ -48,7 +50,7 @@
     "tslint": "^5.9.1",
     "typescript": "^2.7.1",
     "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^4.0.0"
   },
   "files": [
     "dist",
@@ -62,5 +64,6 @@
     "type": "git",
     "url": "git@github.com:wix/stylable.git"
   },
-  "author": "Wix.com"
+  "author": "Wix.com",
+  "snyk": true
 }
