@@ -22,7 +22,7 @@
     "is-vendor-prefixed": "^1.0.0",
     "lodash.clonedeep": "^4.5.0",
     "murmurhash": "^0.0.2",
-    "postcss": "^6.0.17",
+    "postcss": "^8.5.6",
     "postcss-js": "^1.0.1",
     "postcss-nested": "^3.0.0",
     "postcss-safe-parser": "^3.0.1",
